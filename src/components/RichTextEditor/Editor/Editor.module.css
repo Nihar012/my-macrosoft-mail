@@ -1,0 +1,14 @@
+.Editor {
+  width: 100%;
+  min-height: 6rem;
+  overflow: auto;
+  cursor: text;
+  box-sizing: border-box;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .Editor {
+    min-height: 8rem;
+  }
+}

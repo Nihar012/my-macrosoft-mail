@@ -1,0 +1,26 @@
+.Container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #292d4d;
+    padding: 0 0.2rem 0 0.5rem;
+    box-sizing: border-box;
+}
+
+.LogoutButton {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.LogoutButton .LogoutIcon {
+    height: 60%;
+    width: auto;
+    color: white;
+}

@@ -1,0 +1,109 @@
+.Container {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  width: 75%;
+  height: calc(100% - 3rem);
+  overflow: auto;
+}
+
+.Container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.Container::-webkit-scrollbar-thumb {
+  background-color: #5d5e81;
+  border-radius: 4px;
+}
+
+.Container::-webkit-scrollbar-thumb:hover {
+  background-color: #686991;
+}
+
+.Header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #21243f;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.Header .LeftContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.Header .LeftContent .BackButton {
+  display: none;
+}
+
+.Header .LeftContent .ProfilePic {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.Header .LeftContent .EmailParties {
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.Header .LeftContent .EmailParties .FromUsername {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.Header .LeftContent .EmailParties .ToUsername {
+  color: white;
+  font-size: 0.8rem;
+}
+
+.Header .Date {
+  color: rgb(240, 240, 240);
+  font-size: 0.7rem;
+}
+
+.EmailSubject {
+  color: whitesmoke;
+  font-size: 1.2rem;
+  padding: 0 1.5rem;
+  margin: 1.5rem 0;
+  box-sizing: border-box;
+}
+
+.EmailBody {
+  color: rgb(230, 230, 230);
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .Container {
+    width: 100%;
+  }
+  .Header {
+    padding: 0.8rem 0.2rem;
+  }
+  .Header .LeftContent .BackButton {
+    display: block;
+    padding: 0.2rem 0;
+    margin-right: 0.2rem;
+    box-sizing: border-box;  
+  }  
+  .Header .LeftContent .BackButton .Icon {
+    color: whitesmoke;
+    height: 1.8rem;
+    width: auto;
+  }
+  .Header .LeftContent .EmailParties {
+    padding: 0 0.6rem;
+    box-sizing: border-box;
+  }
+}

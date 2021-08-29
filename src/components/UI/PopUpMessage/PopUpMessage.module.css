@@ -1,0 +1,25 @@
+.PopUpMessage {
+  position: sticky;
+  bottom: 0.2rem;
+  margin: auto;
+  width: 98%;
+  background-color: #17192b;
+  border-radius: 2px;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.SentIcon,
+.FailedIcon {
+    height: 1.2rem;
+    width: auto;
+    color: white;
+}
+
+.FailedIcon {
+    color: red;
+}

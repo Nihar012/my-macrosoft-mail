@@ -1,0 +1,21 @@
+.Container {
+  width: 99%;
+  height: calc(100% - 2.5rem);
+  overflow: auto;
+  padding: 0.5rem 0.3rem;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.Container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.Container::-webkit-scrollbar-thumb {
+  background-color: #5d5e81;
+  border-radius: 4px;
+}
+
+.Container::-webkit-scrollbar-thumb:hover {
+  background-color: #686991;
+}

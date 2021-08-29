@@ -1,0 +1,54 @@
+.Container {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .ShowEmailsList {
+        animation: showEmailsList 0.1s ease-out forwards;
+    }
+    .HideEmailsList {
+        animation: hideEmailsList 0.1s ease-out forwards;
+    }
+
+    @keyframes showEmailsList {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }        
+    }
+    @keyframes hideEmailsList {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }        
+    }
+
+    .ShowEmailDetails {
+        animation: showEmailDetails 0.1s ease-out forwards;
+    }
+    .HideEmailDetails {
+        animation: hideEmailDetails 0.1s ease-out forwards;
+    }
+
+    @keyframes showEmailDetails {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }        
+    }
+    @keyframes hideEmailDetails {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(100%);
+        }        
+    }
+}

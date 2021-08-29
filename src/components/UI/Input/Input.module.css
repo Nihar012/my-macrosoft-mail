@@ -1,0 +1,64 @@
+.Container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.InputElementWrapper {
+  position: relative;
+}
+
+.InputElement {
+  width: 100%;
+  height: 2rem;
+  outline: none;
+  border: 1px solid #eff1f3;
+  background-color: white;
+  color: #333;
+  padding: 0 0.3rem;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.InputElement::placeholder {
+  color: grey;
+}
+
+.InputElement.Password {
+  padding-right: 2rem;
+}
+
+.InputElement.Invalid {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.InputElement:focus {
+  border-color: #bfc1c4;
+}
+
+.ValidationMessage {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: red;
+  box-sizing: border-box;
+}
+
+.ShowPasswordButtonContainer {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.ShowPasswordButtonContainer .Icon {
+  height: 65%;
+  width: auto;
+  color: rgb(97, 97, 97);
+}

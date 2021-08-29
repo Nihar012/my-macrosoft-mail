@@ -1,0 +1,19 @@
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.Container .ProfilePicture {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.Container .Username {
+  color: white;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}

@@ -1,0 +1,35 @@
+.Container {
+    display: flex;
+    padding: 0 0.2rem;
+    box-sizing: border-box;
+}
+
+.Option {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.Option.MultipleSelect.Active {
+    background-color: white;
+}
+
+.Icon {
+    color: rgb(226, 226, 226);
+    height: 70%;
+    width: auto;
+}
+
+.Option:active .Icon {
+    color: white;
+}
+
+.Option.MultipleSelect:active .Icon,
+.Option.MultipleSelect.Active .Icon {
+    color: #dd0000;
+}

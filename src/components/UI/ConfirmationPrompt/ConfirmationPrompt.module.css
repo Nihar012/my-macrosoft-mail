@@ -1,0 +1,45 @@
+.Container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.Message {
+    color: #333;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.ButtonContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.Button {
+    width: 50%;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+}
+
+.Button:first-of-type {
+    border-right: 1px solid#ccc;
+}
+
+.Button:hover {
+    background-color: whitesmoke;
+}
+
+.Button:active {
+    background-color: rgb(228, 228, 228);
+}

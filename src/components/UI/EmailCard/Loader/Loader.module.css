@@ -1,0 +1,89 @@
+.Container {
+  width: 100%;
+  min-height: 5rem;
+  background-color: #3b3f5f;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ProfilePic {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.EmailAttributes {
+  width: calc(100% - 2.6rem);
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+
+.EmailAttributes .Header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.EmailAttributes .Header .FromUsername {
+  width: 45%;
+  height: 0.9rem;
+  margin: 0.1rem 0;
+  box-sizing: border-box;
+}
+
+.EmailAttributes .Header .Time {
+  width: 15%;
+  height: 0.4rem;
+  box-sizing: border-box;
+}
+
+.EmailAttributes .EmailTitle {
+  width: 55%;
+  height: 0.6rem;
+  margin: 0.2rem 0;
+  box-sizing: border-box;
+}
+
+.EmailAttributes .EmailBody {
+  width: 90%;
+  height: 0.5rem;
+  margin: 0.3rem 0;
+  box-sizing: border-box;
+}
+
+.ShimmerWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: loading 1.5s ease-out infinite;
+}
+
+.Shimmer {
+  width: 25%;
+  height: 100%;
+  background: #8e92ac2f;
+  transform: skewX(-40deg);
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-140%);
+  }
+  50% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(140%);
+  }
+}

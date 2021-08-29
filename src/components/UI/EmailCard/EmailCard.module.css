@@ -1,0 +1,105 @@
+.DividerDateContainer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.DividerDateContainer .Underline {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  width: 92%;
+  height: 1px;
+  background-color: rgb(201, 201, 201);
+}
+
+.DividerDateContainer .DividerDate {
+  display: inline-block;
+  position: sticky;
+  color: rgb(187, 187, 187);
+  padding: 0 1rem;
+  background-color: #33395e;
+  box-sizing: border-box;
+}
+
+.Container {
+  width: 100%;
+  background-color: #3b3f5f;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.Container.Opened {
+  background-color: #545575;
+}
+
+.Container.Selected{
+  border: 1px solid red;
+}
+
+.ProfilePic,
+.SelectedMarker {
+  width: 2.6rem;
+  height: 2.6rem;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.SelectedMarker .Icon {
+  width: 100%;
+  height: 100%;
+  color: red;
+}
+
+.EmailAttributes {
+  width: calc(100% - 2.6rem);
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+
+.EmailAttributes .Header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.EmailAttributes .Header .FromUsername {
+  color: white;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.EmailAttributes .Header .Time {
+  color: rgb(212, 212, 212);
+  font-size: 0.7rem;
+}
+
+.EmailAttributes .ToUsername,
+.EmailAttributes .EmailTitle {
+  color: whitesmoke;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.EmailAttributes .EmailBody {
+  color: rgb(209, 209, 209);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.3rem 0;
+  box-sizing: border-box;
+}

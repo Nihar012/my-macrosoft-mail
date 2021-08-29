@@ -1,0 +1,9 @@
+.Skeleton {
+    display: block;
+    background: rgb(184, 184, 184);
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    cursor: default;
+    box-sizing: border-box;
+}

@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Login from './pages/Login/Login';
+import Dashboard from './pages/Dashboard/Dashboard';
+import { connect } from 'react-redux';
+import * as actions from './store/actions/index';
 
-function App() {
+const App = props => {
+
+  useEffect(() => {
+    props.autoLogin()
+
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {props.isAuth ?
+        <Switch>
+          <Route path='/dashboard' >
+            <Dashboard />
+          </Route>
+          <Redirect from='/' to='/dashboard' />
+        </Switch> :
+        <Route path='/' >
+          <Login />
+        </Route>}
+        
     </div>
   );
 }
 
-export default App;
+
+const mapStateToProps = state => {
+  return {
+    isAuth: state.auth.token ? true : false
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    autoLogin: () => dispatch(actions.onAutoLogin())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,0 +1,18 @@
+.StylingButton {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2px;
+  margin: 0.1rem;
+  box-sizing: border-box;
+}
+
+.StylingButton:active,
+.StylingButton.Active {
+  background-color: rgba(128, 128, 128, 0.25);
+}
