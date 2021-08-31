@@ -17,7 +17,7 @@ const Dashboard = props => {
     const [showComposeEmailModal, setShowComposeEmailModal] = useState(false)
     const [openedEmailId, setOpenedEmailId] = useState(null)
 
-    const nodeRef = React.useRef(null)
+    // const nodeRef = React.useRef(null)
 
     useEffect(() => {
         props.getProfile(props.profileUrl, props.token)
@@ -42,7 +42,7 @@ const Dashboard = props => {
 
         <CSSTransition
             in={props.location.pathname === '/dashboard'}
-            nodeRef={nodeRef}
+            // nodeRef={nodeRef}
             timeout={100}
             classNames={{
                 enterActive: classes.ShowEmailsList,
@@ -57,7 +57,7 @@ const Dashboard = props => {
 
         <CSSTransition
             in={props.location.pathname.includes('/dashboard/email/')}
-            nodeRef={nodeRef}
+            // nodeRef={nodeRef}
             timeout={100}
             mountOnEnter
             unmountOnExit

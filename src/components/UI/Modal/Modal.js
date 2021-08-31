@@ -5,7 +5,7 @@ import { IoMdClose } from 'react-icons/io';
 
 const Modal = props => {
 
-    const nodeRef = React.useRef(null)    //---------------------to prevent depricated findDOMNode warning
+    // const nodeRef = React.useRef(null)    //---------------------to prevent depricated findDOMNode warning
 
     let modalClassnames = [classes.Modal];
     switch (props.type) {
@@ -24,7 +24,7 @@ const Modal = props => {
         {props.show && <div className={classes.Backdrop} onClick={props.close} ></div>}
 
         <CSSTransition
-            nodeRef={nodeRef}
+            // nodeRef={nodeRef}
             in={props.show}
             timeout={200}
             mountOnEnter

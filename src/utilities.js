@@ -1,6 +1,14 @@
+import { EditorState, convertFromRaw } from 'draft-js';
+
 export const emailTest = (value) => {
     const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     return emailRegex.test(value);
+}
+
+export const convertToPlainText = (value) => {
+    return EditorState.createWithContent(convertFromRaw(
+        JSON.parse(value)
+    )).getCurrentContent().getPlainText('\u0000')
 }
 
 export const sortEmailCards = (emailA, emailB) => {
@@ -49,9 +57,13 @@ export const calculateTime = (timestampString) => {
 export const calculateDateDifference = (date1, date2) => {
     const convertedDate1 = new Date(date1)
     const convertedDate2 = new Date(date2)
-    const difference = date2 && Math.round((convertedDate1.getTime() - convertedDate2.getTime()) / (1000 * 60 * 60 * 24))
-    if (difference >= 1 || (!difference && difference !== 0) || (difference === 0 && convertedDate1.getDate() !== convertedDate2.getDate()))
-        return calculateDate(date2)
-    else if (difference === 0 && convertedDate1.getDate() === convertedDate2.getDate())
-        return false;
+    if (!date1)
+        return calculateDate(date2) !== 'Today' && calculateDate(date2)
+    else {
+        const difference = date2 && Math.round((convertedDate1.getTime() - convertedDate2.getTime()) / (1000 * 60 * 60 * 24))
+        if (difference >= 1 || (!difference && difference !== 0) || (difference === 0 && convertedDate1.getDate() !== convertedDate2.getDate()))
+            return calculateDate(date2)
+        else if (difference === 0 && convertedDate1.getDate() === convertedDate2.getDate())
+            return false;
+    }
 }

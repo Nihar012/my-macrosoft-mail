@@ -77,10 +77,10 @@
 
 @media only screen and (max-width: 1000px) {
   .ComposeEmailModal {
-    top: 3rem;
+    top: 4%;
     left: 3%;
+    height: 92%;
     width: 94%;
-    height: calc(100% - 4rem);
   }
   .ConfirmationModal {
     top: 35%;
