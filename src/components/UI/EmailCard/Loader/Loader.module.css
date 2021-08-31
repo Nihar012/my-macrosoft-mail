@@ -33,7 +33,7 @@
   justify-content: space-between;
 }
 
-.EmailAttributes .Header .FromUsername {
+.EmailAttributes .Header .Attribute1 {
   width: 45%;
   height: 0.9rem;
   margin: 0.1rem 0;
@@ -46,14 +46,14 @@
   box-sizing: border-box;
 }
 
-.EmailAttributes .EmailTitle {
+.EmailAttributes .Attribute2 {
   width: 55%;
   height: 0.6rem;
   margin: 0.2rem 0;
   box-sizing: border-box;
 }
 
-.EmailAttributes .EmailBody {
+.EmailAttributes .Attribute3 {
   width: 90%;
   height: 0.5rem;
   margin: 0.3rem 0;

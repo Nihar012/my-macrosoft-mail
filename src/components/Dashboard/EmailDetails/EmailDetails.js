@@ -4,7 +4,7 @@ import Viewer from '../../RichTextEditor/Viewer/Viewer';
 import { Redirect, withRouter } from 'react-router-dom';
 import { IoChevronBackSharp } from 'react-icons/io5';
 import { connect } from 'react-redux';
-import { calculateDate, calculateTime } from '../../../utilities';
+import { convertToPlainText, calculateDate, calculateTime } from '../../../utilities';
 
 const EmailDetails = props => {
 
@@ -43,7 +43,7 @@ const EmailDetails = props => {
                     <div className={classes.BackButton} onClick={goBackHandler} >
                         <IoChevronBackSharp className={classes.Icon} />
                     </div>
-                    <img className={classes.ProfilePic} src={openedEmail.from.picture} />
+                    <img className={classes.ProfilePic} src={openedEmail.from.picture} alt='' />
                     <div className={classes.EmailParties} >
                         <div className={classes.FromUsername} >{setFromUserNameHandler()}</div>
                         <div className={classes.ToUsername} >{setToUserNameHandler()}</div>
@@ -56,10 +56,10 @@ const EmailDetails = props => {
 
             </div>
 
-            <div className={classes.EmailSubject} >{openedEmail.subject}</div>
+            <div className={classes.EmailSubject} >{openedEmail.subject ? openedEmail.subject : '(no subject)'}</div>
 
             <div className={classes.EmailBody} >
-                <Viewer content={openedEmail.body} />
+                {convertToPlainText(openedEmail.body) ? <Viewer content={openedEmail.body} /> : '(no body)'}
             </div>
 
         </div>

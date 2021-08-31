@@ -1,9 +1,8 @@
 import React from 'react';
 import classes from './EmailCard.module.css';
-import { EditorState, convertFromRaw } from 'draft-js';
 import { calculateTime } from '../../../utilities';
 import { IoIosCheckmarkCircle } from 'react-icons/io';
-import { calculateDateDifference } from '../../../utilities';
+import { convertToPlainText, calculateDateDifference } from '../../../utilities';
 
 const EmailCard = props => {
 
@@ -16,7 +15,13 @@ const EmailCard = props => {
         case 'sent':
             fromUsername = 'From: You'
             toUsername = `to ${props.data.to}`
+            break;
+        default:
+            fromUsername = null;
     }
+
+    const title = props.data.title.length > 0 ? props.data.title : '(no title)'
+    const emailBody = convertToPlainText(props.data.body) ? convertToPlainText(props.data.body) : '(no body)'
 
     const containerClassNames = [classes.Container]
     if (props.isOpened)
@@ -38,18 +43,16 @@ const EmailCard = props => {
         <div className={containerClassNames.join(' ')} onClick={props.clicked} >
 
             {!props.isSelected
-                ? <img className={classes.ProfilePic} src={props.data.from.picture} />
+                ? <img className={classes.ProfilePic} src={props.data.from.picture} alt='' />
                 : <div className={classes.SelectedMarker} ><IoIosCheckmarkCircle className={classes.Icon} /></div>}
 
             <div className={classes.EmailAttributes} >
                 <div className={classes.Header} >
-                    <div className={classes.FromUsername} >{fromUsername}</div>
+                    <div className={classes.Attribute1} >{fromUsername}</div>
                     <div className={classes.Time} >{calculateTime(props.data.timeStamp)}</div>
                 </div>
-                {toUsername
-                    ? <div className={classes.ToUsername} >{toUsername}</div>
-                    : <div className={classes.EmailTitle} >{props.data.title}</div>}
-                <div className={classes.EmailBody} >{EditorState.createWithContent(convertFromRaw(JSON.parse(props.data.body))).getCurrentContent().getPlainText('\u0000')}</div>
+                <div className={classes.Attribute2} >{props.type === 'sent' ? toUsername : title}</div>
+                <div className={classes.Attribute3} >{props.type === 'sent' ? title : emailBody}</div>
             </div>
 
         </div>

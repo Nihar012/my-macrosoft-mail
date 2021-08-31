@@ -10,11 +10,11 @@ const Loader = props => {
 
         <div className={classes.EmailAttributes} >
             <div className={classes.Header} >
-                <div className={classes.FromUsername} ><Skeleton /></div>
+                <div className={classes.Attribute1} ><Skeleton /></div>
                 <div className={classes.Time} ><Skeleton /></div>
             </div>
-            <div className={classes.EmailTitle} ><Skeleton /></div>
-            <div className={classes.EmailBody} ><Skeleton /></div>
+            <div className={classes.Attribute2} ><Skeleton /></div>
+            <div className={classes.Attribute3} ><Skeleton /></div>
         </div>
 
         <div className={classes.ShimmerWrapper} >
